@@ -1,3 +1,10 @@
+## React tutorialで作ったものを置くところ。
+
+一応は動く。
+現状eslint系のトラブルが起きるので半ば諦めている。あと`tsc`が使えない（noEmitオプションが自動で追加される）のでどうすればいいのかが分からない。
+
+## 以下デフォルトのreadme
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
