@@ -1,15 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Todo from "./Todo";
+import { Props } from "../containers/VisibleTodoList";
 
-const TodoList = ({ todos, toggleTodo }: Prop): JSX.Element => (
-  <ul>
-    {todos?.map((todo) => (
-      <Todo key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
-    ))}
-  </ul>
-);
-
+class TodoList extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props);
+  }
+  render(): JSX.Element {
+    if (this.props.todos === undefined) return <ul></ul>;
+    return (
+      <ul>
+        {this.props.todos.map((todo) => (
+          <Todo
+            key={todo.id}
+            {...todo}
+            onClick={() => this.props.toggleTodo(todo.id)}
+          />
+        ))}
+      </ul>
+    );
+  }
+}
+/*
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
@@ -20,14 +33,5 @@ TodoList.propTypes = {
   ).isRequired,
   toggleTodo: PropTypes.func.isRequired,
 };
-
-type Prop = {
-  todos?: {
-    id: any;
-    completed: any;
-    text: any;
-  }[];
-  toggleTodo: (...args: any[]) => any;
-};
-
+*/
 export default TodoList;
