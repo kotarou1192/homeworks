@@ -10,14 +10,19 @@ interface userInfo {
 
 type userInfoKeys = keyof userInfo;
 
-function main(): void {
-  fetchGitHubUserInfo("js-primer-example").catch((error) => {
+async function main(): Promise<void> {
+  try {
+    const userId = getUserId();
+    const userInfo = await fetchGitHubUserInfo(userId);
+    const view = createView(userInfo);
+    displayView(view);
+  } catch (error) {
     console.log(new Date() + ": an error occurred");
     console.error(error);
-  });
+  }
 }
 
-async function fetchGitHubUserInfo(userId: string): Promise<void> {
+async function fetchGitHubUserInfo(userId: string): Promise<userInfo> {
   return fetch(
     `https://api.github.com/users/${encodeURIComponent(userId)}`
   ).then((response) => {
@@ -27,15 +32,14 @@ async function fetchGitHubUserInfo(userId: string): Promise<void> {
       throw new Error(
         `${new Date()}: ${response.status}: ${response.statusText}`
       );
-    } else {
-      return response.json().then((userInfo) => {
-        // JSONパースされたオブジェクトが渡される
-        const view = createView(userInfo);
-
-        displayView(view);
-      });
     }
+    return response.json();
   });
+}
+
+function getUserId(): string {
+  const input = document.getElementById("userId") as HTMLInputElement;
+  return input.value;
 }
 
 function createView(userInfo: userInfo): string {
