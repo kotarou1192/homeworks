@@ -1,5 +1,6 @@
 # homeworks
-輪読会で決まった課題を投稿するリポジトリ
+輪読会で決まった課題を投稿するリポジトリ  
+JSのコードをTypeScriptで書きました。  
 
 js-primer-ajax
 https://jsprimer.net/use-case/ajaxapp/
