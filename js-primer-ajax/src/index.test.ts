@@ -1,4 +1,4 @@
-import * as functions from "./index.js";
+import * as functions from "./index";
 /*
 import Global = NodeJS.Global;
 export interface GlobalWithCognitoFix extends Global {
