@@ -20,6 +20,6 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "include": ["src/**/*", "test/index.test.tsx", "test/index.test.tsx", "test/index.test.tsx", "test/index.test.tsx"],
-  "exclude": ["node_modules", "dist", "test"]
+  "include": ["src/**/*", "src/test/index.test.tsx"],
+  "exclude": ["node_modules", "dist"]
 }
