@@ -20,7 +20,18 @@ describe("App test", () => {
     const date = new Date();
     act(() => {
       ReactDOM.render(
-        <Todo text="hoge" deadline={date} isDone={true} />,
+        <Todo
+          text="hoge"
+          deadline={date}
+          isDone={true}
+          todoNumber={0}
+          onClick={() => {
+            return;
+          }}
+          deleteTodo={(n) => {
+            return;
+          }}
+        />,
         container
       );
     });
