@@ -1,0 +1,25 @@
+.todo {
+  text-align: center;
+  width: 500px;
+  border-top: solid 5px black;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  box-shadow:0 3px 5px cadetblue;
+}
+
+.todo__text {
+  font-size: medium;
+}
+
+.todo__date {
+  font-size: small;
+}
+
+.todo__done {
+  background-color: rgb(87, 87, 87);
+}
+
+.todo__doing {
+  background-color: white;
+}

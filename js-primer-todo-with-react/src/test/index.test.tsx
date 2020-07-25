@@ -1,4 +1,4 @@
-import { App } from "../apps/app";
+import { Todo } from "../apps/todo";
 import { act } from "react-dom/test-utils";
 import ReactDOM, { unmountComponentAtNode } from "react-dom";
 import React from "react";
@@ -16,10 +16,14 @@ afterEach(() => {
 });
 
 describe("App test", () => {
-  test("should display hello, world", () => {
+  test("add a Todo", () => {
+    const date = new Date();
     act(() => {
-      ReactDOM.render(<App />, container);
+      ReactDOM.render(
+        <Todo text="hoge" deadline={date} isDone={true} />,
+        container
+      );
     });
-    expect(container.textContent).toBe("hello, world");
+    expect(container.textContent).toBe(`hoge${date.toISOString()}`);
   });
 });
