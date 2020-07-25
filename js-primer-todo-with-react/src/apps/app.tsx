@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Todo, TodoProps } from "./todo";
 import { AddTodo } from "./addTodo";
+import "../styles/src/apps/app.css";
 
 export const App: React.SFC = () => {
   const [todos, setTodo] = React.useState<TodoProps[]>([]);
@@ -20,7 +21,7 @@ export const App: React.SFC = () => {
   };
 
   return (
-    <div>
+    <div className="todoapp">
       <p style={{ textAlign: "center" }}>入力してエンターを押す</p>
       <AddTodo
         todos={todos}
@@ -33,7 +34,7 @@ export const App: React.SFC = () => {
       >
         リストをクリックしてDone, もう一度クリックしてDoing
       </p>
-      <div style={{ display: "inline-block" }}>
+      <div>
         {todos.map((todo, index) => {
           return (
             <Todo

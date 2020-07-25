@@ -29,14 +29,14 @@ export const Todo = (props: TodoProps & onClick & deleteTodo): JSX.Element => {
       >
         <p className={"todo__card__text"}>{props.text}</p>
         <p className={"todo__card__date"}>{props.deadline.toISOString()}</p>
-      </li>
-      <li>
-        <button
-          className={"todo__button"}
-          onClick={() => props.deleteTodo(props.todoNumber)}
-        >
-          削除
-        </button>
+        <p>
+          <button
+            className={"todo__button"}
+            onClick={() => props.deleteTodo(props.todoNumber)}
+          >
+            X
+          </button>
+        </p>
       </li>
     </ul>
   );
