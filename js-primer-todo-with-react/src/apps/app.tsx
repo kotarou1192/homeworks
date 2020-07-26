@@ -18,6 +18,16 @@ export const App: React.SFC = () => {
 
     setTodo(slicedTodos);
     setDone(slicedIsDone);
+    switchCheckBox(slicedIsDone);
+  };
+
+  const switchCheckBox = (isDone: boolean[]) => {
+    const checkboxes = (document.getElementsByName(
+      "checkbox"
+    ) as unknown) as NodeListOf<HTMLInputElement>;
+    isDone.forEach((isCompleted, index) => {
+      checkboxes.item(index).checked = isCompleted;
+    });
   };
 
   return (
