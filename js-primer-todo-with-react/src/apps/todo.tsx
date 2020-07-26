@@ -28,7 +28,7 @@ export const Todo = (props: TodoProps & onClick & deleteTodo): JSX.Element => {
       >
         <input name="checkbox" type="checkbox" onClick={props.onClick}></input>
         <p className={"todo-card__text"}>{props.text}</p>
-        <p className={"todo-card__date"}>{props.deadline.toISOString()}</p>
+        <p className={"todo-card__date"}>{props.deadline.toString()}</p>
         <p>
           <button
             className={"todo-card__button"}
