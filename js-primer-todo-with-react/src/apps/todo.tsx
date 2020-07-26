@@ -22,16 +22,16 @@ export const Todo = (props: TodoProps & onClick & deleteTodo): JSX.Element => {
       <li
         className={
           props.isDone
-            ? "todo todo__card todo__card__done"
-            : "todo todo__card todo__card__doing"
+            ? "todo-card todo-card__done"
+            : "todo-card todo-card__doing"
         }
         onClick={props.onClick}
       >
-        <p className={"todo__card__text"}>{props.text}</p>
-        <p className={"todo__card__date"}>{props.deadline.toISOString()}</p>
+        <p className={"todo-card__text"}>{props.text}</p>
+        <p className={"todo-card__date"}>{props.deadline.toISOString()}</p>
         <p>
           <button
-            className={"todo__button"}
+            className={"todo-card__button"}
             onClick={() => props.deleteTodo(props.todoNumber)}
           >
             X

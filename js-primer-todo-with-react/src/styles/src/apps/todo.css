@@ -11,7 +11,7 @@ li {
   padding: 16px;
 }
 
-.todo__button {
+.todo-card__button {
   margin: 0;
   padding: 0;
   border: 0;
@@ -27,7 +27,7 @@ li {
   height: 40px;
 }
 
-.todo__card {
+.todo-card {
   position: relative;
   width: 100%;
   border-top: solid 5px black;
@@ -38,18 +38,18 @@ li {
   box-shadow:0 3px 5px cadetblue;
 }
 
-.todo__card__text {
+.todo-card__text {
   font-size: medium;
 }
 
-.todo__card__date {
+.todo-card__date {
   font-size: small;
 }
 
-.todo__card__done {
+.todo-card__done {
   background-color: rgb(87, 87, 87);
 }
 
-.todo__card__doing {
+.todo-card__doing {
   background-color: white;
 }
