@@ -35,6 +35,6 @@ describe("App test", () => {
         container
       );
     });
-    expect(container.textContent).toBe(`hoge${date.toISOString()}`);
+    expect(container.textContent).toBe(`hoge${date.toString()}X`);
   });
 });
